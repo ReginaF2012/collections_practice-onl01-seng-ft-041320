@@ -11,12 +11,8 @@ def sort_array_char_count(array)
 end 
 
 def swap_elements(array)
-new_variable = array[2]
-other_new_variable = array[1]
-array.pop
-array.pop
-array << new_variable
-array << other_new_variable
+array[1], array[2] = array[2], array[1]
+array
 end 
 
 def reverse_array(array)
@@ -31,7 +27,8 @@ def kesha_maker(array)
 end 
 
 def find_a(array)
-  array.select{|a| a[0] == "a"}
+  array.find_all do |word|
+    word[0] == "a"
 end 
 
 def sum_array(array)
@@ -43,8 +40,7 @@ def add_s(array)
     if word==array[1]
       word
   else
-    word = "#{word}s"
-    word
+    word + "s"
   end
 end
 end
